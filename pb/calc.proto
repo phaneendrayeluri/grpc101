@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+message Number {
+  int32 value = 1;
+}
+
+message Tuple {
+  Number x = 1;
+  Number y = 2;
+}
+
+service Math {
+  rpc Add(Tuple) returns(Number) {}
+  rpc Sub(Tuple) returns(Number) {}
+}
